@@ -7,7 +7,9 @@ function CustomMarker(
     id,
     latitude,
     longitude,
-    color
+    color,
+    colegio,
+    notaIdeb
   }) {
 
   return (
@@ -33,7 +35,7 @@ function CustomMarker(
           {
             backgroundColor: color || "#4285F4", //Caso nenhuma cor seja passada via props, o marcador será exibido na cor azul
           },
-        ]}>
+          ]}>
           <View style={styles.markerDot}></View>
         </View>
         <View style={[
@@ -47,9 +49,8 @@ function CustomMarker(
       {/* Caso queira customizar totalmente a aparência de um Callout através de seus filhos, atribua à ele a propriedade tooltip=true */}
       <Callout style={styles.callout}>
         <View>
-          <Text style={styles.title}>Meu primeiro marcador :D </Text>
-          <Text style={styles.description}> Latitude: {latitude}</Text>
-          <Text style={styles.description}> Longitude: {longitude}</Text>
+          <Text style={styles.title}> {colegio}</Text>
+          <Text style={styles.description}> Nota: {notaIdeb}</Text>
         </View>
       </Callout>
     </Marker>
@@ -101,13 +102,13 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: "700",
-    fontSize: 16,
+    fontSize: 15,
     marginBottom: 5,
     color: 'gray',
   },
   description: {
     fontWeight: "600",
-    fontSize: 14,
+    fontSize: 12,
     marginBottom: 5,
     color: 'gray',
   }
